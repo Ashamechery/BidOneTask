@@ -15,44 +15,35 @@ using System.Diagnostics;
 namespace BidOneTask.Test
 {
     [TestFixture]
-    internal class Search :CommonDriver
+    internal class Search : CommonDriver
     {
-    
-        [Test, Order(2)]
+
+        [Test, Order(1)]
         public void SearchKeyword()
         {
-           
-            try
             {
                 //HomePage page Initialization and definition
-                
+
                 HomePage HomePageObj = new HomePage();
                 HomePageObj.SearchCheese(webDriver);
-                HomePageObj.SearchKeyword(webDriver);
-            }
-            catch
-            {
-                Assert.Fail("Didnt search keyword", ex.Message);
-            }
 
+
+
+            }
         }
-        [Test, Order(2)]
-        public void AddtoBasket()
-        {
-
-            try
+            [Test, Order(2)]
+            public void AddtoBasket()
             {
+
+
+
                 //HomePage page Initialization and definition
 
                 HomePage HomePageObj = new HomePage();
                 HomePageObj.SearchKeyword(webDriver);
-            }
-            catch
-            {
-                Assert.Fail("Item not added", ex.Message);
+
+
             }
 
         }
-
     }
-}
